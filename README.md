@@ -3,6 +3,7 @@
 Welcome to React + Vite! This template provides a streamlined setup to harness the power of React within the Vite ecosystem, complete with Hot Module Replacement (HMR) and ESLint integration. 
 
 ## Features
+- **Tailwind**: CSS desing.
 - **Vitejs/plugin-react**: Utilizes Babel for Fast Refresh.
 - **Vitejs/plugin-react-swc**: Employs SWC for Fast Refresh.
 
@@ -36,6 +37,3 @@ For more detailed information on usage and configuration, refer to the official 
 
 ## Contributions
 Contributions and feedback are always welcome! Feel free to submit issues or pull requests to improve this template.
-
-## License
-This project is licensed under the [MIT License](LICENSE).
