@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-
-import ALL from '../components/organisms/ALL';
+import React from 'react';
+import Center from '../components/organisms/Center';
 
 function Main() {
-
   return (
-    <ALL/>
+    <div className="flex bg-black m-0 p-5 w-full h-auto min-h-screen">
+      <Center />
+    </div>
   );
 }
 

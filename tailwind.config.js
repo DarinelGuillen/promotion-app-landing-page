@@ -5,8 +5,11 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx,vue}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'GA': ['Gaoel', 'sans-serif']
+      }
+    }
   },
   plugins: [],
 }
- 
