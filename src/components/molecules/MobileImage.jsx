@@ -4,7 +4,7 @@ import mobileImage from '../../assets/images/fitsapp-rotate.png';
 
 function MobileImage() {
   return (
-    <div className="flex justify-center pt-0 pb-20">
+    <div className="flex justify-center overflow-hidden">
       <img src={mobileImage} alt="Mobile Design" className="w-auto" />
     </div>
   );

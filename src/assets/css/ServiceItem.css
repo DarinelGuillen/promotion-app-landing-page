@@ -20,6 +20,10 @@
   gap: 1rem;
 }
 
+.service-container.reverse {
+  flex-direction: row-reverse;
+}
+
 .alternate-item {
   padding: 1rem;
   color: rgb(255, 255, 255);
@@ -35,10 +39,22 @@
   position: relative;
 }
 
+.alternate-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 20px 20px;
+  background-repeat: repeat;
+  transition: transform 0.6s ease-in-out;
+  transform: scale(0.8);
+}
+
 .alternate-item .content {
   width: 100%;
   transition: color 3s ease-in-out, transform 0.6s ease-in-out;
-  position: absolute; /* Para poder ajustar la posición del p */
   bottom: 0;
   left: 0;
   padding: 1rem;
@@ -46,8 +62,8 @@
 
 .alternate-item .content p {
   position: absolute;
-  left: -2rem; /* Ajustamos el texto para que sobresalga */
-  bottom: 1rem; /* Ajustamos la posición del texto */
+  left: -2rem;
+  bottom: 1rem;
   font-size: 8rem;
   transition: transform 0.6s ease-in-out;
 }
@@ -65,7 +81,7 @@
 
 .service-item p {
   margin: 0;
-  margin-left: 0;  /* Aseguramos que ambos tengan el mismo margen izquierdo */
+  margin-left: 0;
   padding-right: 0;
 }
 
@@ -94,17 +110,24 @@
 
 /* Añadir las siguientes reglas */
 .service-container:hover .service-item {
-  width: 60%;
+  width: 50%;
   background-color: var(--hover-color);
 }
 
 .service-container:hover .service-item::before {
-  width: 100%;
+  width: 10%;
 }
 
-.service-container:hover .service-item .content {
+/* Ajustar padding basado en reverse */
+.service-container:hover .service-item:not(.reverse) .content {
   padding-left: 19rem;
   padding-right: 0rem;
+  align-items: flex-start;
+}
+
+.service-container.reverse:hover .service-item .content {
+  padding-left: 0rem;
+  padding-right: 19rem;
   align-items: flex-start;
 }
 
@@ -117,11 +140,31 @@
   transform: scale(1.1);
 }
 
+.service-container:hover .alternate-item::after {
+  transform: scale(1.2);
+}
+
 /* Media queries para responsividad */
+@media (max-width: 767px) {
+  .service-item .content p {
+    display: none;
+  }
+
+  .alternate-item::before {
+    content: attr(data-description);
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+    font-weight: lighter;
+    color: white;
+  }
+}
 
 /* Para pantallas extra grandes (XL) */
 @media (min-width: 1500px) {
-  .service-item {
+  .service-item, .alternate-item {
     padding: 3rem;
     height: 21rem;
     width: 22rem;
@@ -132,8 +175,13 @@
     padding-right: 5rem;
   }
 
-  .service-item:hover .content {
+  .service-container:hover .service-item:not(.reverse) .content {
     padding-left: 30rem;
+  }
+
+  .service-container.reverse:hover .service-item .content {
+    padding-left: 0rem;
+    padding-right: 30rem;
   }
 }
 
@@ -150,16 +198,21 @@
     padding-right: 5rem;
   }
 
-  .service-item:hover .content {
+  .service-container:hover .service-item:not(.reverse) .content {
     padding-left: 20rem;
+  }
+
+  .service-container.reverse:hover .service-item .content {
+    padding-left: 0rem;
+    padding-right: 20rem;
   }
 }
 
 /* Para pantallas medianas (tabletas) */
 @media (max-width: 1199px) and (min-width: 768px) {
-  .service-item {
+  .service-item, .alternate-item{
     padding: 0.5rem;
-    height: 16rem;
+    height: 14rem;
     width: 14rem;
   }
 
@@ -168,8 +221,13 @@
     padding-right: 3rem;
   }
 
-  .service-item:hover .content {
+  .service-container:hover .service-item:not(.reverse) .content {
     padding-left: 15rem;
+  }
+
+  .service-container.reverse:hover .service-item .content {
+    padding-left: 0rem;
+    padding-right: 15rem;
   }
 }
 
