@@ -1,0 +1,91 @@
+.header-container {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  max-width: 90%;
+  box-sizing: border-box;
+}
+
+.header-container img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  vertical-align: middle;
+  animation-name: fadeInTop;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.header-container h1 {
+  margin-top: 20px;
+  font-size: 2.5em;
+  line-height: 1.2em;
+  animation-name: leFadeInLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  white-space: pre-line;
+  font-weight: 400; /* Hace el texto menos bold */
+}
+
+.header-container p {
+  margin-top: 10px;
+  font-size: 1.25em;
+  animation-name: leFadeInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  font-weight: 400; /* Hace el texto menos bold */
+}
+
+@keyframes leFadeInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-60px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeInTop {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container h1 {
+      font-size: 2em;
+  }
+
+  .header-container p {
+      font-size: 1em;
+  }
+
+  .header-container img {
+      width: 30px;
+      height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container h1 {
+      font-size: 1.5em;
+  }
+
+  .header-container p {
+      font-size: 0.875em;
+  }
+
+  .header-container img {
+      width: 25px;
+      height: 25px;
+  }
+}
