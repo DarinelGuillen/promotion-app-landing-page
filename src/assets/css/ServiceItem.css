@@ -12,12 +12,14 @@
   overflow: hidden;
   background-color: var(--initial-color);
   position: relative;
+  z-index: 10; /* Aseguramos que tenga un z-index más bajo que .code */
 }
 
 .service-container {
   display: flex;
   width: 100%;
   gap: 1rem;
+  position: relative;
 }
 
 .service-container.reverse {
@@ -37,19 +39,19 @@
   width: 16rem;
   overflow: hidden;
   position: relative;
+  z-index: 10; /* Aseguramos que tenga un z-index más bajo que .code */
 }
 
 .alternate-item::after {
   content: "";
   position: absolute;
   top: 0;
-  right: 0;
   width: 100%;
   height: 100%;
   background-size: 20px 20px;
   background-repeat: repeat;
-  transition: transform 0.6s ease-in-out;
-  transform: scale(0.8);
+  transition: transform 6s ease-in-out;
+  transform: scale(0.6);
 }
 
 .alternate-item .content {
@@ -62,6 +64,7 @@
 
 .alternate-item .content p {
   position: absolute;
+  z-index: 0;
   left: -2rem;
   bottom: 1rem;
   font-size: 8rem;
@@ -115,7 +118,7 @@
 }
 
 .service-container:hover .service-item::before {
-  width: 10%;
+  width: 100%;
 }
 
 /* Ajustar padding basado en reverse */
@@ -133,7 +136,7 @@
 
 .service-container:hover .alternate-item .content {
   color: var(--hover-color);
-  transform: scale(1.6);
+  transform: scale(1.3);
 }
 
 .service-container:hover .alternate-item .content p {
@@ -236,4 +239,82 @@
   .service-item {
     display: none;
   }
+}
+
+/*  */
+
+.code {
+  font-size: 4rem;
+  display: flex;
+  flex-wrap: nowrap;
+  color: hsl(0 0% 100%);
+  border-radius: 2rem;
+  background: hsla(0, 2%, 91%, 0.049);
+  justify-content: center;
+  box-shadow: 0 1px hsl(0 0% 100% / 0.25) inset;
+  z-index: 20;
+  position: relative;
+}
+
+.service-container:hover .code {
+  color: var(--hover-color);
+  z-index: 30;
+}
+
+.code:hover {
+  cursor: grab;
+}
+
+.digit {
+  display: flex;
+  height: 100%;
+  padding: 5.5rem 1rem;
+}
+
+.digit:focus-visible {
+  outline-color: hsla(0, 100%, 46%, 0.25);
+  outline-offset: 1rem;
+}
+
+.digit span {
+  scale: calc(var(--active, 0) + 0.5);
+  filter: blur(calc((1 - var(--active, 0)) * 1rem));
+  transition: scale calc(((1 - var(--active, 0)) + 0.2) * 1s), filter calc(((1 - var(--active, 0)) + 0.2) * 1s);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.digit:first-of-type {
+  padding-left: 5rem;
+}
+.digit:last-of-type {
+  padding-right: 5rem;
+}
+
+
+.digit:is(:hover, :focus-visible) {
+  --active: var(--lerp-0);
+}
+.digit:is(:hover, :focus-visible) + .digit,
+.digit:has(+ .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-1);
+}
+.digit:is(:hover, :focus-visible) + .digit + .digit,
+.digit:has(+ .digit + .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-2);
+}
+.digit:is(:hover, :focus-visible) + .digit + .digit + .digit,
+.digit:has(+ .digit + .digit + .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-3);
+}
+.digit:is(:hover, :focus-visible) + .digit + .digit + .digit + .digit,
+.digit:has(+ .digit + .digit + .digit + .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-4);
+}
+.digit:is(:hover, :focus-visible) + .digit + .digit + .digit + .digit + .digit,
+.digit:has(+ .digit + .digit + .digit + .digit + .digit:is(:hover, :focus-visible)) {
+  --active: var(--lerp-5);
 }
