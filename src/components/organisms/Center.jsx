@@ -10,10 +10,7 @@ function Center() {
         <Header />
         <MobileImage />
       </div>
-      <div className="lg:flex-1 xl:flex-1 bg-blue-500 w-full sm:w-full md:w-full h-full lg:h-screen xl:h-screen overflow-auto">
-        <ServiceGrid />
-        <ServiceGrid />
-        <ServiceGrid />
+      <div className="lg:flex-1 xl:flex-1 w-full sm:w-full md:w-full h-full lg:h-screen xl:h-screen overflow-auto">
         <ServiceGrid />
       </div>
     </div>

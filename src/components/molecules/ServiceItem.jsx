@@ -1,11 +1,19 @@
 import React from 'react';
+import '../../assets/css/ServiceItem.css';
 
-function ServiceItem({ color, text }) {
+function ServiceItem({ color, hoverColor, description, title, stageNumber, styleBackground }) {
   return (
-    <div className={`p-4 ${color} rounded-lg text-white flex items-center justify-center`}>
-      <div className="text-center">
-        <p className="text-lg font-bold">Text Example</p>
-        <p>Service</p>
+    <div className="service-container">
+      <div className="service-item" style={{ '--initial-color': color, '--hover-color': hoverColor }}>
+        <div className="content">
+          <p>{description}</p>
+          <p>{title}</p>
+        </div>
+      </div>
+      <div className="alternate-item" style={{ '--initial-color': styleBackground, '--hover-color': hoverColor }}>
+        <div className="content">
+          <p className='font-GA'>{stageNumber}</p>
+        </div>
       </div>
     </div>
   );

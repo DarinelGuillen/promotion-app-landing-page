@@ -1,0 +1,181 @@
+/* ServiceItem.css */
+.service-item {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 16rem;
+  width: 16rem;
+  transition: width 0.6s ease-in-out, background-color 0.6s ease-in-out;
+  overflow: hidden;
+  background-color: var(--initial-color);
+  position: relative;
+}
+
+.service-container {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.alternate-item {
+  padding: 1rem;
+  color: rgb(255, 255, 255);
+  background-color: #343434;
+  align-items: flex-end;
+  justify-content: flex-start;
+  display: flex;
+  flex-grow: 9;
+  border-radius: 1rem;
+  height: 16rem;
+  width: 16rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.alternate-item .content {
+  width: 100%;
+  transition: color 3s ease-in-out, transform 0.6s ease-in-out;
+  position: absolute; /* Para poder ajustar la posición del p */
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+.alternate-item .content p {
+  position: absolute;
+  left: -2rem; /* Ajustamos el texto para que sobresalga */
+  bottom: 1rem; /* Ajustamos la posición del texto */
+  font-size: 8rem;
+  transition: transform 0.6s ease-in-out;
+}
+
+.service-item .content {
+  width: 100%;
+  padding-left: 0rem;
+  padding-right: 4rem;
+  transition: padding 0.6s ease-in-out;
+  transform-origin: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.service-item p {
+  margin: 0;
+  margin-left: 0;  /* Aseguramos que ambos tengan el mismo margen izquierdo */
+  padding-right: 0;
+}
+
+.service-item p:first-of-type {
+  font-size: 1.25rem;
+  font-weight: lighter;
+}
+
+.service-item p:last-of-type {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.service-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--hover-color);
+  z-index: -1;
+  transition: width 0.6s ease-in-out;
+}
+
+/* Añadir las siguientes reglas */
+.service-container:hover .service-item {
+  width: 60%;
+  background-color: var(--hover-color);
+}
+
+.service-container:hover .service-item::before {
+  width: 100%;
+}
+
+.service-container:hover .service-item .content {
+  padding-left: 19rem;
+  padding-right: 0rem;
+  align-items: flex-start;
+}
+
+.service-container:hover .alternate-item .content {
+  color: var(--hover-color);
+  transform: scale(1.6);
+}
+
+.service-container:hover .alternate-item .content p {
+  transform: scale(1.1);
+}
+
+/* Media queries para responsividad */
+
+/* Para pantallas extra grandes (XL) */
+@media (min-width: 1500px) {
+  .service-item {
+    padding: 3rem;
+    height: 21rem;
+    width: 22rem;
+  }
+
+  .service-item .content {
+    padding-left: 0rem;
+    padding-right: 5rem;
+  }
+
+  .service-item:hover .content {
+    padding-left: 30rem;
+  }
+}
+
+/* Para pantallas grandes (laptops grandes y desktops) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .service-item {
+    padding: 2rem;
+    height: 16rem;
+    width: 20rem;
+  }
+
+  .service-item .content {
+    padding-left: 0rem;
+    padding-right: 5rem;
+  }
+
+  .service-item:hover .content {
+    padding-left: 20rem;
+  }
+}
+
+/* Para pantallas medianas (tabletas) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .service-item {
+    padding: 0.5rem;
+    height: 16rem;
+    width: 14rem;
+  }
+
+  .service-item .content {
+    padding-left: 0rem;
+    padding-right: 3rem;
+  }
+
+  .service-item:hover .content {
+    padding-left: 15rem;
+  }
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+  .service-item {
+    display: none;
+  }
+}
