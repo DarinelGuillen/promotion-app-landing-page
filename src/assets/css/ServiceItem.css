@@ -113,7 +113,7 @@
 
 /* Añadir las siguientes reglas */
 .service-container:hover .service-item {
-  width: 50%;
+  width: 60%;
   background-color: var(--hover-color);
 }
 

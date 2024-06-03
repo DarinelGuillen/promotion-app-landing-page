@@ -12,23 +12,23 @@ function ServiceItem({ color, hoverColor, description, title, stageNumber, style
       </div>
       <div className="alternate-item" style={{ '--initial-color': styleBackground, '--hover-color': hoverColor }} data-description={description}>
         <div className="content">
-        <ul class="code">
-    <li tabindex="0" class="digit">
+        <ul className="code">
+    <li className="digit">
       <span>0</span>
     </li>
-    <li tabindex="0" class="digit">
+    <li className="digit">
       <span>3</span>
     </li>
-    <li tabindex="0" class="digit">
+    <li className="digit">
       <span>4</span>
     </li>
-    <li tabindex="0" class="digit">
+    <li className="digit">
       <span>8</span>
     </li>
-    <li tabindex="0" class="digit">
+    <li className="digit">
       <span>7</span>
     </li>
-    <li tabindex="0" class="digit">
+    <li className="digit">
       <span>2</span>
     </li>
   </ul>

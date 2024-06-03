@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Main from "../pages/Main";
-
 import ProtectRoute from "./ProtectRoute.jsx";
-import Context from "../contexts/Context.js";
+import { ContextProvider } from "../contexts/Context.jsx";
+
 function App() {
-
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Main/>}/>
-
-      </Routes>
-    </BrowserRouter>
-  )
+    <ContextProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          {/* Agrega aquí más rutas si es necesario */}
+        </Routes>
+      </BrowserRouter>
+    </ContextProvider>
+  );
 }
 
-export default App
+export default App;
