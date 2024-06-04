@@ -10,9 +10,7 @@ function V001() {
 
   return (
     <div className="flex flex-col gap-y-4 h-screen" >
-      <div className="flex justify-between items-center p-4 rounded-3xl w-auto" style={{ backgroundColor: selectedService.color }}>
-        <button onClick={handleBack} className="text-white text-xl">&lt; Back</button>
-      </div>
+
       <div className="flex flex-col flex-1 justify-center items-center p-8 rounded-3xl text-center text-white" style={{ backgroundColor: selectedService.color }}>
         <h1 className="mb-4 font-bold text-4xl">{selectedService.title}</h1>
         <p className="mb-8 text-lg">{selectedService.desc}</p>
