@@ -16,9 +16,9 @@ function ServiceGrid() {
   };
 
   return (
-    <div className="flex flex-wrap gap-y-4 mt-5 p-4 w-full">
+    <div className="flex flex-wrap gap-y-4 mt-5 p-4 w-full overflow-scroll">
       {[
-        { title: "Entrena", desc: "Mejora tu rutina", color: "#3E2D55", stage: "001", route: "/entrena" },
+        { title: "Entrena", desc: "Mejora tu rutina", color: "#532F7E", stage: "001", route: "/entrena" },
         { title: "Innove", desc: "Nuevas características", color: "#644D32", stage: "002", reverse: true, route: "/innove" },
         { title: "Elige", desc: "Nuestra app es mejor", color: "#7B3535", stage: "003", route: "/elige" },
         { title: "Inspírate", desc: "Casos de éxito", color: "#2A447A", stage: "004", reverse: true, route: "/inspirate" },

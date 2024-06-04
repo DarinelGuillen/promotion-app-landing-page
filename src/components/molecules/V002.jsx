@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function V001() {
+function V002() {
   return (
     <div className="bg-gray-900 w-full h-full">
 
@@ -9,4 +9,4 @@ function V001() {
   );
 }
 
-export default V001;
+export default V002;
