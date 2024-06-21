@@ -45,10 +45,10 @@ function MacTab({ selectedService }) {
 
   return (
     <div className="flex flex-col bg-white m-0 p-1 rounded-3xl w-full h-full">
-      <div className='sticky flex justify-around px-3 py-2 p-x-2 rounded-xl w-full h-auto ga-col'>
+      <div className='top-0 z-10 sticky flex justify-around bg-white px-3 py-2 rounded-xl w-full h-auto'>
         <MacCircles />
       </div>
-      <div className='flex-1 px-[2rem] pb-[2rem] rounded-3xl w-full overflow-y-scroll'>
+      <div className='flex-1 px-[2rem] pb-[2rem] rounded-3xl w-full overflow-y-auto'>
         {view}
       </div>
     </div>

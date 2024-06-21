@@ -1,5 +1,10 @@
 import React, { useContext } from 'react';
 import Context from '../../contexts/Context.jsx';
+import imgFeature1 from '../../assets/images/Mobile_VisualizaciónClara.png';
+import imgFeature2 from '../../assets/images/Mobile_PlanesPersonalizados.png';
+import imgFeature3 from '../../assets/images/Mobile_RegistroSimplificado.png';
+import imgFeature4 from '../../assets/images/Mobile_SobrecargaProgresiva.png';
+
 function V001() {
   const { selectedService, saveServiceData } = useContext(Context);
 
@@ -7,31 +12,48 @@ function V001() {
     saveServiceData({}, '');
   };
 
+  const features = [
+    {
+      icon: '📝',
+      name: 'Registro Simplificado',
+      description: 'Una interfaz intuitiva para un registro rápido y fácil de tus entrenamientos.',
+      image: imgFeature3
+    },
+    {
+      icon: '📈',
+      name: 'Sobrecarga Progresiva',
+      description: 'Programas y consejos específicos para implementar la sobrecarga progresiva de manera efectiva.',
+      image: imgFeature4
+    },
+    {
+      icon: '📊',
+      name: 'Visualización Clara del Progreso',
+      description: 'Gráficos e informes claros que muestran los avances en fuerza, resistencia y otros parámetros.',
+      image: imgFeature1
+    },
+    {
+      icon: '🏋️‍♂️',
+      name: 'Planes Personalizados',
+      description: 'Personalización según objetivos individuales para un entrenamiento efectivo.',
+      image: imgFeature2
+    }
+  ];
+
   return (
+    <div className="flex flex-col flex-1 justify-center items-center drop-shadow-2xl p-8 rounded-3xl h-auto text-center text-white overflow-visible" style={{ backgroundColor: selectedService.color }}>
+      <h1 className="mb-4 font-bold text-4xl">{selectedService.title}</h1>
+      <p className="mb-8 text-lg">{selectedService.desc}</p>
 
-      <div className="flex flex-col flex-1 justify-center items-center drop-shadow-2xl p-8 rounded-3xl h-screen text-center text-white overflow-auto" style={{ backgroundColor: selectedService.color }}>
-        <h1 className="mb-4 font-bold text-4xl">{selectedService.title}</h1>
-        <p className="mb-8 text-lg">{selectedService.desc}</p>
-        <div className="flex flex-wrap justify-center gap-8">
-          <div className="bg-white p-4 rounded-lg w-64 text-black">
-            <h2 className="font-bold text-xl">Brand Identity</h2>
-            <p>Our performance to raise your brands profile through distinctive visuals and meticulous attention to detail.</p>
+      <div className="gap-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
+        {features.map((feature, index) => (
+          <div key={index} className="flex flex-col items-center bg-white bg-opacity-20 p-6 rounded-lg max-w-xs text-black">
+            <div className="mb-4 text-6xl">{feature.icon}</div>
+            <h2 className="mb-2 font-bold text-2xl">{feature.name}</h2>
+            <p className="mb-4 text-center text-lg">{feature.description}</p>
+            <img src={feature.image} alt={`${feature.name} image`} className="shadow-lg rounded-lg max-w-full h-auto" />
           </div>
-          <div className="bg-white p-4 rounded-lg w-64 text-black">
-            <h2 className="font-bold text-xl">UX/UI Design</h2>
-            <p>We are focused on creating fluid consumer interfaces, utilizing cutting-edge interaction.</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg w-64 text-black">
-            <h2 className="font-bold text-xl">Development</h2>
-            <p>Our seasoned team strives to polish your product and to satisfy your brand demands.</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg w-64 text-black">
-            <h2 className="font-bold text-xl">Unmatched Support</h2>
-            <p>Support for all your needs and issues will be available 24/7, encompassing various channels worldwide.</p>
-          </div>
-        </div>
-
-
+        ))}
+      </div>
     </div>
   );
 }

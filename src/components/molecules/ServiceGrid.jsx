@@ -20,8 +20,8 @@ function ServiceGrid() {
       {[
         { title: "Features", desc: "Discover More", color: "#532F7E", stage: "001", route: "/" },
         { title: "Benefits", desc: "Why Us", color: "#644D32", stage: "002", reverse: true, route: "/" },
-        { title: "Community", desc: "Join Others", color: "#7B3535", stage: "003", route: "/" },
-        { title: "Testimonials", desc: "Success Stories", color: "#2A447A", stage: "004", reverse: true, route: "/" },
+        { title: "About Us", desc: "Our Story", color: "#7B3535", stage: "003", route: "/" },
+        { title: "FAQ", desc: "Questions Answered", color: "#2A447A", stage: "004", reverse: true, route: "/" },
         { title: "Download", desc: "Join Us", color: "#3A6E52", stage: "005", route: "/" },
       ].map(({ title, desc, color, stage, route, reverse }) => (
         <div key={stage} className='w-full' onClick={() => handleClick({ title, desc, color, stage }, route)}>
