@@ -16,13 +16,13 @@ function ServiceGrid() {
   };
 
   return (
-    <div className="flex flex-wrap gap-y-4 mt-5 p-4 w-full overflow-scroll">
+    <div className="flex flex-wrap gap-y-4 mt-5 p-4 w-full overflow-auto">
       {[
-        { title: "Entrena", desc: "Mejora tu rutina", color: "#532F7E", stage: "001", route: "/entrena" },
-        { title: "Innove", desc: "Nuevas características", color: "#644D32", stage: "002", reverse: true, route: "/innove" },
-        { title: "Elige", desc: "Nuestra app es mejor", color: "#7B3535", stage: "003", route: "/elige" },
-        { title: "Inspírate", desc: "Casos de éxito", color: "#2A447A", stage: "004", reverse: true, route: "/inspirate" },
-        { title: "Descarga", desc: "Empieza ahora", color: "#3A6E52", stage: "005", route: "/descarga" },
+        { title: "Features", desc: "Discover More", color: "#532F7E", stage: "001", route: "/" },
+        { title: "Benefits", desc: "Why Us", color: "#644D32", stage: "002", reverse: true, route: "/" },
+        { title: "Community", desc: "Join Others", color: "#7B3535", stage: "003", route: "/" },
+        { title: "Testimonials", desc: "Success Stories", color: "#2A447A", stage: "004", reverse: true, route: "/" },
+        { title: "Download", desc: "Join Us", color: "#3A6E52", stage: "005", route: "/" },
       ].map(({ title, desc, color, stage, route, reverse }) => (
         <div key={stage} className='w-full' onClick={() => handleClick({ title, desc, color, stage }, route)}>
           <ServiceItem

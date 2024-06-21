@@ -3,12 +3,11 @@ import { FaTimes, FaMinus, FaExpandAlt } from 'react-icons/fa';
 import Context from '../../contexts/Context';
 
 const MacCircles = () => {
-  const { selectedService, saveServiceData } = useContext(Context);
+  const {  saveServiceData } = useContext(Context);
 
 
   const handleCloseClick = () => {
     saveServiceData({}, '');
-    console.log("Close clicked and context cleared");
   };
   const handleMinimizeClick = () => {
     const expandElement = document.querySelector('.expandable');
@@ -16,7 +15,6 @@ const MacCircles = () => {
       expandElement.classList.remove('hidden');
       expandElement.classList.remove('collapsed');
     }
-    console.log("Minimize clicked");
   };
 
   const handleExpandClick = () => {
@@ -27,7 +25,6 @@ const MacCircles = () => {
         expandElement.classList.add('hidden');
       }, { once: true });
     }
-    console.log("Expand clicked");
   };
 
   return (

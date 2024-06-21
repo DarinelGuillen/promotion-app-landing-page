@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import Context from '../../contexts/Context.jsx';
-
 function V001() {
   const { selectedService, saveServiceData } = useContext(Context);
 
@@ -9,9 +8,8 @@ function V001() {
   };
 
   return (
-    <div className="flex flex-col gap-y-4 h-screen" >
 
-      <div className="flex flex-col flex-1 justify-center items-center p-8 rounded-3xl text-center text-white" style={{ backgroundColor: selectedService.color }}>
+      <div className="flex flex-col flex-1 justify-center items-center drop-shadow-2xl p-8 rounded-3xl h-screen text-center text-white overflow-auto" style={{ backgroundColor: selectedService.color }}>
         <h1 className="mb-4 font-bold text-4xl">{selectedService.title}</h1>
         <p className="mb-8 text-lg">{selectedService.desc}</p>
         <div className="flex flex-wrap justify-center gap-8">
@@ -32,7 +30,8 @@ function V001() {
             <p>Support for all your needs and issues will be available 24/7, encompassing various channels worldwide.</p>
           </div>
         </div>
-      </div>
+
+
     </div>
   );
 }

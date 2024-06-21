@@ -10,7 +10,7 @@ function Center() {
         <Header />
         <MobileImage />
       </div>
-      <div className="lg:flex-1 xl:flex-1 w-full sm:w-full md:w-full h-full lg:h-screen xl:h-screen GridContainer">
+      <div className="lg:flex-1 xl:flex-1 px-3 w-full sm:w-full md:w-full h-full lg:h-screen xl:h-screen GridContainer">
         <GridView />
       </div>
     </div>
